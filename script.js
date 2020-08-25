@@ -256,6 +256,7 @@ console.log(retirement);
 
 */
 
+/*
 ///////////////////////
 // ES6 Arrays
 const boxes = document.querySelectorAll('.box'); // this will return a node list (not an array)
@@ -306,6 +307,42 @@ console.log(ages[fullAge.indexOf(true)]);
 //ES6 working with arrays
 console.log(ages.findIndex(current => current >= 18)); // to find the index
 console.log(ages.find(current => current >= 18)); // to find the value
+*/
+
+///////////////////////
+// The Spread Operator   -> to expand elements of an array
+
+function addFourAges (a,b,c,d){
+    return a + b + c + d; 
+}
+var sum1 = addFourAges(18, 30, 12, 21);
+console.log(sum1);
+
+// ES5
+var ages = [18, 30, 12, 21];
+var sum2 = addFourAges.apply(null, ages);
+console.log(sum2);
+
+// ES6 
+const sum3 = addFourAges(...ages);
+console.log(sum3);
+
+//combine arrays
+const familySmith = ['John', 'Jane', 'Mark'];
+const familyMiller = ['Mary', 'Bob', 'Ann'];
+
+const bigFamliy = [...familySmith, 'Lily', ...familyMiller];
+console.log(bigFamliy);
+
+
+// another example ES6
+const header = document.querySelector('h1') //by element name
+const boxes = document.querySelectorAll('.box');
+const all = [header, ...boxes]; //node list
+Array.from(all).forEach(current => current.style.color = 'purple');
+
+
+
 
 
 
