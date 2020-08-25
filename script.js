@@ -309,6 +309,7 @@ console.log(ages.findIndex(current => current >= 18)); // to find the index
 console.log(ages.find(current => current >= 18)); // to find the value
 */
 
+/*
 ///////////////////////
 // The Spread Operator   -> to expand elements of an array
 
@@ -340,6 +341,53 @@ const header = document.querySelector('h1') //by element name
 const boxes = document.querySelectorAll('.box');
 const all = [header, ...boxes]; //node list
 Array.from(all).forEach(current => current.style.color = 'purple');
+
+*/
+
+//////////////////
+// Rest Parameters
+
+// ES5
+// function isFullAge5(){
+//     //console.log(arguments);  // arguments is not an array
+//     var argsArr = Array.prototype.slice.call(arguments);
+
+//     argsArr.forEach(function(current){
+//         console.log((2016 - current) >= 18);
+//     });
+// }
+// //isFullAge5(1990, 1999, 1965);
+// //isFullAge5(1990, 1999, 1965, 2016, 1987);
+
+// // ES6
+// function isFullAge6(...years){ // will transform the parameters to an array
+//     //console.log(years);
+//     years.forEach(current => console.log((2016 - current) >= 18));
+// } 
+// isFullAge6(1990, 1999, 1965, 2016, 1987);
+
+//----------------------------- 
+
+// ES5
+function isFullAge5(limit){
+    //console.log(arguments);  // arguments is not an array
+    var argsArr = Array.prototype.slice.call(arguments, 1); //1 will exclude the first element
+
+    //console.log(argsArr);
+
+    argsArr.forEach(function(current){
+        console.log((2016 - current) >= limit);
+    });
+}
+//isFullAge5(21, 1990, 1999, 1965);
+//isFullAge5(1990, 1999, 1965, 2016, 1987);
+
+// ES6
+function isFullAge6(limit, ...years){ // will transform the parameters to an array
+    //console.log(years);
+    years.forEach(current => console.log((2016 - current) >= limit));
+} 
+isFullAge6(21, 1990, 1999, 1965, 2016, 1987);
 
 
 
