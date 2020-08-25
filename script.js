@@ -1,3 +1,4 @@
+/*
 // let and const  //ES6
 
 //Decalre variables in ES5
@@ -68,3 +69,34 @@ for (var i = 0; i < 5; i++){ // i here is the same i oustide the if block
     console.log(i); // 0 1 2 3 4
 }
 console.log(i); // 5
+
+*/
+
+// Blocks and IIEFs
+
+//ES5 to make a block we have to use IIEF
+(function () {
+    var c = 3;
+})();
+//console.log(c); //error c is not defiend 
+
+// ES6 a block is just a curly brackets
+{
+    const a = 1;
+    let b = 2;
+    var c = 3; 
+}
+console.log(c);// var is not block-scoped, they are function scoped
+
+//console.log(a + b); // error a is not defined
+
+
+
+
+
+
+
+
+
+
+
