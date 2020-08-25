@@ -93,6 +93,7 @@ console.log(c);// var is not block-scoped, they are function scoped
 
 */
 
+/*
 // Strings in ES6
 
 let firstName = 'John';
@@ -114,9 +115,34 @@ console.log(fullName.endsWith('sm'));
 console.log(fullName.includes('p'));
 
 console.log(`${firstName} `.repeat(5));
+*/
 
+// Arrow functions: Basics
 
+const years = [1990, 1965, 1982, 1937];
 
+// ES5
+var ages5 = years.map(function (el) {
+    return 2020 - el;
+});
+console.log(ages5);
+
+// ES6
+//arrow function with 1 line of code
+let ages6 = years.map(el => 2020 - el);  
+console.log(ages6);
+
+//arrow function with 1 line of code and more parameters
+ages6 = years.map((el, index) => `Age element ${index + 1}: ${2020 -el}.`);
+console.log(ages6);
+
+//arrow function with multiple lines of code
+ages6 = years.map((el, index) => {
+    const now = new Date().getFullYear();
+    const age = now - el;
+    return `Age element ${index + 1}: ${age}.`;
+});
+console.log(ages6);
 
 
 
