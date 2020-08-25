@@ -146,6 +146,7 @@ ages6 = years.map((el, index) => {
 console.log(ages6);
 */
 
+/*
 // Arrow functions: Lexical 'this' keyword
 
 // ES5 version
@@ -213,5 +214,49 @@ Person.prototype.myFriends6 = function (friends) {
     console.log(arr);
 }
 new Person('Mike').myFriends6(friends);
+*/
+
+// Destructuring
+//ES5 
+var john = ['John', 26];
+var name1 = john[0];
+var age1 = john[1];
+
+
+// ES6
+const [name, age] = ['John', 26];
+console.log(name);
+console.log(age);
+
+const obj = {
+    firstName: 'John',
+    lastName: 'Smith'
+};
+
+const {firstName, lastName} = obj;
+console.log(firstName);
+console.log(lastName);
+
+const {firstName: a, lastName: b} = obj;
+console.log(a);
+console.log(b);
+
+// In ES5 when we need to return multiple values from a function, we create an object and 
+// return that object. But wi ES6 destructuring is easier
+
+function calcAgeRetirement(year) {
+    const age = new Date().getFullYear() - year;
+    return [age, 65 - age];
+}
+
+const [age2, retirement] = calcAgeRetirement(1990);
+console.log(age2);
+console.log(retirement);
+
+
+
+
+
+
 
 
