@@ -72,6 +72,7 @@ console.log(i); // 5
 
 */
 
+/*
 // Blocks and IIEFs
 
 //ES5 to make a block we have to use IIEF
@@ -90,8 +91,29 @@ console.log(c);// var is not block-scoped, they are function scoped
 
 //console.log(a + b); // error a is not defined
 
+*/
 
+// Strings in ES6
 
+let firstName = 'John';
+let lastName = 'Smith';
+const yearOfBirth = 1990;
+function calculateAge(year) {
+    return 2020 - year;
+}
+
+// ES5 
+console.log('This is ' + firstName + ' ' + lastName + '. He was born in '+ yearOfBirth + '. Today, he is ' + calculateAge(yearOfBirth) + ' years old.');
+
+// ES6  using template literals (backticks  ``)
+console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. Today, he is ${calculateAge(yearOfBirth)} years old.`);
+
+const fullName = `${firstName} ${lastName}`;
+console.log(fullName.startsWith('j'));
+console.log(fullName.endsWith('sm'));
+console.log(fullName.includes('p'));
+
+console.log(`${firstName} `.repeat(5));
 
 
 
