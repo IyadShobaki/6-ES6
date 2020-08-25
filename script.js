@@ -216,6 +216,7 @@ Person.prototype.myFriends6 = function (friends) {
 new Person('Mike').myFriends6(friends);
 */
 
+/*
 // Destructuring
 //ES5 
 var john = ['John', 26];
@@ -253,8 +254,58 @@ const [age2, retirement] = calcAgeRetirement(1990);
 console.log(age2);
 console.log(retirement);
 
+*/
+
+///////////////////////
+// ES6 Arrays
+const boxes = document.querySelectorAll('.box'); // this will return a node list (not an array)
+
+// To change boxes to an array in  - ES5
+var boxesArr5 = Array.prototype.slice.call(boxes);
+//console.log(boxesArr5);
+//Change all boxes to blue color
+boxesArr5.forEach(function (current) {
+    //current.style.backgroundColor = 'dodgerblue';
+});
+
+// To change boxes to an array in  - ES6
+
+const boxesArr6 = Array.from(boxes);
+//boxesArr6.forEach(current => current.style.backgroundColor = 'dodgerblue');
+// simpler way
+Array.from(boxes).forEach(current => current.style.backgroundColor = 'dodgerblue');
+
+// Using loop in ES5 to change the box texts (exept the blue box)
+for(var i =0; i < boxesArr5.length; i++){
+    if(boxesArr5[i].className === 'box blue'){
+        continue;
+    }
+
+    //boxesArr5[i].textContent = 'I changed to blue!';
+}
+
+// Using loop in ES6 to change the box texts (exept the blue box)
+for (const current of boxesArr6){
+    if(current.className.includes('blue')){
+        continue;
+    }
+    current.textContent = 'I changed to blue!';
+}
 
 
+//ES5 working with arrays
+var ages = [12,17,8,21,14,11];
+var fullAge = ages.map(function(current){
+    return current >= 18;
+});
+console.log(fullAge);
+
+console.log(fullAge.indexOf(true));
+console.log(ages[fullAge.indexOf(true)]);
+
+//ES6 working with arrays
+console.log(ages.findIndex(current => current >= 18)); // to find the index
+console.log(ages.find(current => current >= 18)); // to find the value
 
 
 
